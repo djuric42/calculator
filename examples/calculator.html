@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Calculator</title>
+<link rel="stylesheet" href="../css/calculator.css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="calculator"></div>
+
+<script type="text/javascript" src="../lib/calculator.js"></script>
+<script type="text/javascript">
+  var calc = new Calculator("#calculator");
+
+  calc.defineKey('operator', '1/X', function() {
+    var lpop = this.stack.dpop();
+    var result = 1 / lpop;
+
+    this.stack.push(result);
+
+    this.screen = result;
+  });
+
+  calc.defineKey('operator', 'X<sup>2</sup>', function(value) {
+    var lpop = this.stack.dpop();
+    var result = Math.pow(lpop, 2);
+
+    this.stack.push(result);
+
+    this.screen = result;
+  });
+
+  calc.defineKey('operator', 'Y<sup>x</sup>', function() {
+    this.modifierFunc = function(input) {
+      var lpop = this.stack.dpop();
+      var result = Math.pow(lpop, input);
+
+      this.screen = result;
+    };
+  });
+
+  calc.createSpacer();
+
+  calc.defineKey('operator', '10<sup>x</sup>', function() {
+    var lpop = this.stack.dpop();
+    var result = Math.pow(10, lpop);
+
+    this.stack.push(result);
+
+    this.screen = result;
+
+  });
+
+  calc.defineKey('operator', '√', function() {
+    var lpop = this.stack.dpop();
+    var result = Math.sqrt(lpop);
+
+    this.stack.push(result);
+
+    this.screen = result;
+
+  });
+</script>
+</body>
+</html>
