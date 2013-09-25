@@ -1,0 +1,4 @@
+calculator
+==========
+
+Modular JavaScript Calculator
