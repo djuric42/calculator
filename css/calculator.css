@@ -138,7 +138,7 @@ html {
   background: #FFF0F5;
 }
 
-.top span.clear {
+.top span.clear, .keys span.clear {
   background: #ff9fa8;
   box-shadow: 0px 4px #ff7c87;
   color: white;
@@ -157,7 +157,7 @@ html {
   color: #ffffff;
 }
 
-.top span.clear:hover {
+.top span.clear:hover, .keys span.clear:hover {
   background: #f68991;
   box-shadow: 0px 4px #d3545d;
   color: white;

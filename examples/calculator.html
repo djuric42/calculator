@@ -9,7 +9,8 @@
 
 <script type="text/javascript" src="../lib/calculator.js"></script>
 <script type="text/javascript">
-  var calc = new Calculator("#calculator");
+  var calc = new Calculator("#calculator", {
+  });
 
   calc.defineKey('operator', '1/X', function() {
     var lpop = this.stack.dpop();
@@ -38,7 +39,7 @@
     };
   });
 
-  calc.createSpacer();
+
 
   calc.defineKey('operator', '10<sup>x</sup>', function() {
     var lpop = this.stack.dpop();
