@@ -9,7 +9,7 @@ It's currently in development. An example may be viewed over here [here](https:/
 
 None
 
-Quick demo on how to use it:
+### Quick howto
 
 Creae calculator:
 
