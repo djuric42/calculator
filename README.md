@@ -11,9 +11,10 @@ None
 
 ### Quick howto
 
-Creae calculator:
+Create a new calculator:
 
 ```javascript
+// Assumes <div id="calculator"></div> somewhere on the page.
 new Calculator("#calculator")
 // Or if you're using jQuery
 $("#calculator").calculator();
