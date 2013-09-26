@@ -15,7 +15,7 @@ Creae calculator:
 
 ```javascript
 new Calculator("#calculator")
-# Or if you're using jQuery
+// Or if you're using jQuery
 $("#calculator").calculator();
 ```
 
