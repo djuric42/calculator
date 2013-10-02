@@ -35,9 +35,12 @@
       var lpop = this.stack.dpop();
       var result = Math.pow(lpop, input);
 
-      this.screen = result;
+      this.screen = input;
+
+      this.stack.push(result);
     };
   });
+
 
 
   calc.defineKey('operator', '10<sup>x</sup>', function() {
