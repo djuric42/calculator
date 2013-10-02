@@ -14,52 +14,58 @@
   });
 
   calc.defineKey('operator', '1/X', function() {
-    var lpop = this.stack.dpop();
-    var result = 1 / lpop;
+    //var lpop = this.stack.dpop();
+    var result = 1 / this.screen;
 
-    this.stack.push(result);
+    //this.stack.push(result);
 
+    this.last = result;
     this.screen = result;
   });
 
   calc.defineKey('operator', 'X<sup>2</sup>', function(value) {
-    var lpop = this.stack.dpop();
-    var result = Math.pow(lpop, 2);
+    //var lpop = this.stack.dpop();
+    var result = Math.pow(this.screen, 2);
 
-    this.stack.push(result);
+    //this.stack.push(result);
 
+    this.last = result;
     this.screen = result;
   });
 
   calc.defineKey('operator', 'Y<sup>x</sup>', function() {
+    this.stack.push(this.last);
+
     this.modifierFunc = function(input) {
       var lpop = this.stack.dpop();
       var result = Math.pow(lpop, input);
 
       this.screen = input;
+      this.last = result;
 
-      this.stack.push(result);
+      //this.stack.push(result);
     };
   });
 
 
 
   calc.defineKey('operator', '10<sup>x</sup>', function() {
-    var lpop = this.stack.dpop();
-    var result = Math.pow(10, lpop);
+    //var lpop = this.stack.dpop();
+    var result = Math.pow(10, this.screen);
 
-    this.stack.push(result);
+    //this.stack.push(result);
 
+    this.last = result;
     this.screen = result;
-
   });
 
   calc.defineKey('operator', '√', function() {
-    var lpop = this.stack.dpop();
-    var result = Math.sqrt(lpop);
+    //var lpop = this.stack.dpop();
+    var result = Math.sqrt(this.screen);
 
-    this.stack.push(result);
+    //this.stack.push(result);
 
+    this.last = result;
     this.screen = result;
 
   });
