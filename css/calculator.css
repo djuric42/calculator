@@ -70,7 +70,7 @@ html {
 /* Applying same to the keys */
 .keys span, .top span.clear {
   float: left;
-  position: relative;
+  /*position: relative;*/
   top: 0;
 
   cursor: pointer;
@@ -94,7 +94,7 @@ html {
   -moz-user-select: none;
 
   /* Smoothing out hover and active states using css3 transitions */
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
 
 .keys span.empty {
@@ -113,6 +113,10 @@ html {
 /* Selected operator */
 .keys span.selected {
   background-color: rgba(0, 0, 0, 0.2) !important;
+  color: white;
+}
+.keys span.selected:hover {
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Remove right margins from operator keys */
