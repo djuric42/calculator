@@ -8,16 +8,14 @@
 <body>
 <div id="calculator"></div>
 
+<script type="text/javascript" src="../lib/bignumber.js"></script>
 <script type="text/javascript" src="../lib/calculator.js"></script>
 <script type="text/javascript">
   var calc = new Calculator("#calculator", {
   });
 
   calc.defineKey('operator', '1/X', function() {
-    //var lpop = this.stack.dpop();
-    var result = 1 / this.screen;
-
-    //this.stack.push(result);
+    var result = 1 / this.last;
 
     this.last = result;
     this.screen = result;
@@ -25,9 +23,7 @@
 
   calc.defineKey('operator', 'X<sup>2</sup>', function(value) {
     //var lpop = this.stack.dpop();
-    var result = Math.pow(this.screen, 2);
-
-    //this.stack.push(result);
+    var result = Math.pow(this.last, 2);
 
     this.last = result;
     this.screen = result;
@@ -42,28 +38,20 @@
 
       this.screen = input;
       this.last = result;
-
-      //this.stack.push(result);
     };
   });
 
 
 
   calc.defineKey('operator', '10<sup>x</sup>', function() {
-    //var lpop = this.stack.dpop();
-    var result = Math.pow(10, this.screen);
-
-    //this.stack.push(result);
+    var result = Math.pow(10, this.last);
 
     this.last = result;
     this.screen = result;
   });
 
   calc.defineKey('operator', '√', function() {
-    //var lpop = this.stack.dpop();
-    var result = Math.sqrt(this.screen);
-
-    //this.stack.push(result);
+    var result = Math.sqrt(this.last);
 
     this.last = result;
     this.screen = result;
